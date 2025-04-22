@@ -1,20 +1,27 @@
-export default function Hero() {
+export default function Hero({ darkMode }) {
   return (
-    <section className="py-12 bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff] relative overflow-hidden">
-      <div className="absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] border-[#5fc7dc] opacity-60 animate-pulse"></div>
-      <div className="absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px] border-[#83d9e8] opacity-50"></div>
-      <div className="absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px] border-[#83d9e8] opacity-40"></div>
+    <section
+      className={`py-12 overflow-hidden ${
+        darkMode
+          ? "bg-gradient-to-tr from-[#b0d8e5] via-[#3c8d99] to-[#f8fbff]"
+          : "bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff]"
+      }`}
+    >
       <div className=" pt-12 pb-12 sm:pt-16 sm:pb-16 xl:pb-16">
-        <div
-          className=" pb-20 sm:pb-24 xl:pb-0"
-          // style={{ backgroundImage: "url(beach.jpg)" }}
-        >
+        <div className=" pb-20 sm:pb-24 xl:pb-0">
           <div className="mx-auto flex max-w-7xl flex-col items-center gap-x-8 gap-y-10 px-6 sm:gap-y-8 lg:px-8 xl:flex-row xl:items-stretch">
             <div className="-mt-8 w-full max-w-2xl xl:-mb-8 xl:w-96 xl:flex-none">
-              <div className="relative aspect-2/1 h-full md:-mx-8 xl:mx-0 xl:aspect-auto bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff]">
+              <div
+                className={`relative aspect-2/1 h-full md:-mx-8 xl:mx-0 xl:aspect-auto ${
+                  darkMode
+                    ? "bg-gradient-to-tr from-[#b0d8e5] via-[#3c8d99] to-[#f8fbff]"
+                    : "bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff]"
+                }`}
+              >
                 <img
                   alt=""
-                  src="/background.jpg"
+                  // src="/darkblue-woman.png"
+                  src={darkMode ? "/blue-woman.png" : "/darkblue-woman.png"}
                   className="absolute inset-0 size-full object-cover bg-gray-800 object-cover border border-gray-300"
                 />
               </div>
@@ -33,7 +40,11 @@ export default function Hero() {
                   />
                   <use x={86} href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" />
                 </svg>
-                <blockquote className="text-xl/8 font-semibold text-gray-800 sm:text-2xl/9">
+                <blockquote
+                  className={`text-xl/8 font-semibold  sm:text-2xl/9 ${
+                    darkMode ? "text-gray-900" : "text-gray-800"
+                  }`}
+                >
                   <p>
                     I&#39;m a frontend developer focused on building clean,
                     user-friendly web interfaces. I enjoy turning ideas into
@@ -41,18 +52,45 @@ export default function Hero() {
                     Next.js, and Tailwind CSS.I&#39;m always learning and love
                     working on projects that challenge me.
                   </p>
+                  <div
+                    className={`absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px] ${
+                      darkMode
+                        ? "border-[#b2e7f0] opacity-30"
+                        : "border-[#83d9e8] opacity-30"
+                    }`}
+                  ></div>
+                  <div
+                    className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px]  ${
+                      darkMode
+                        ? "border-[#b2e7f0] opacity-30"
+                        : "border-[#5fc7dc] opacity-30"
+                    }`}
+                  ></div>
+                  <div
+                    className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] animate-pulse ${
+                      darkMode
+                        ? "border-[#b2e7f0] opacity-30"
+                        : "border-[#83d9e8] opacity-80"
+                    }`}
+                  ></div>
                 </blockquote>
                 <figcaption className="mt-8 text-base">
-                  <div className="font-semibold text-gray-500">
+                  <div
+                    className={`font-semibold ${
+                      darkMode ? "text-gray-700" : "text-gray-500"
+                    }`}
+                  >
                     Priyanka Sahu
                   </div>
-                  <div className="mt-1 text-gray-500">Full Stack Developer</div>
+                  <div
+                    className={`mt-1 ${
+                      darkMode ? "text-gray-700" : "text-gray-500"
+                    }`}
+                  >
+                    Full Stack Developer
+                  </div>
                 </figcaption>
               </figure>
-
-              <div className="absolute top-[-150px] right-[-150px] w-[600px] h-[600px] rounded-full border-[6px] border-[#5fc7dc] opacity-60 animate-pulse"></div>
-              <div className="absolute top-[100px] right-[50px] w-[400px] h-[400px] rounded-full border-[5px] border-[#83d9e8] opacity-50"></div>
-              <div className="absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px] border-[#5fc7dc] opacity-40"></div>
             </div>
           </div>
         </div>

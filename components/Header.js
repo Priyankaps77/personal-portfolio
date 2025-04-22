@@ -1,21 +1,11 @@
 import { FaSearch, FaUser, FaSuitcase, FaMoon, FaSun } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const isDark = savedTheme === "dark";
-    setIsDarkMode(isDark);
-    document.documentElement.classList.toggle("dark", isDark); // Apply saved mode
-  }, []);
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleTheme = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    localStorage.setItem("theme", newMode ? "dark" : "light");
-    document.documentElement.classList.toggle("dark", newMode); // Toggle dark class immediately
+    setDarkMode(!darkMode);
   };
 
   return (
@@ -50,6 +40,7 @@ const Header = () => {
             <button
               onClick={toggleTheme}
               className="text-lg cursor-pointer hover:text-gray-600"
+              
             >
               {isDarkMode ? <FaSun /> : <FaMoon />}
             </button>

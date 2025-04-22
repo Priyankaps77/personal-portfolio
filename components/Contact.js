@@ -6,27 +6,77 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 
-export default function Contact() {
+export default function Contact({ darkMode }) {
   return (
     <section
       id="contact"
-      className="py-12 bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff] relative overflow-hidden"
+      className={`py-12 relative overflow-hidden ${
+        darkMode
+          ? "bg-gradient-to-tr from-[#b0d8e5] via-[#3c8d99] to-[#f8fbff]"
+          : "bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff]"
+      }`}
     >
       {/* Background concentric circles */}
-      <div className="absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] border-[#83d9e8] opacity-30 animate-pulse"></div>
-      <div className="absolute top-[100px] left-[50px] w-[400px] h-[400px] hover:shadow-xl rounded-full border-[5px] border-[#5fc7dc] opacity-20"></div>
-      <div className="absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px] border-[#83d9e8] opacity-10"></div>
+      <div
+        className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px]  animate-pulse ${
+          darkMode
+            ? "border-[#b2e7f0] opacity-100"
+            : "border-[#83d9e8] opacity-50"
+        }`}
+      ></div>
+      <div
+        className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] hover:shadow-xl rounded-full border-[5px]  ${
+          darkMode
+            ? "border-[#b2e7f0] opacity-100"
+            : "border-[#5fc7dc] opacity-50"
+        }`}
+      ></div>
+      <div
+        className={`absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px]  ${
+          darkMode
+            ? "border-[#b2e7f0] opacity-100"
+            : "border-[#83d9e8] opacity-50"
+        }`}
+      ></div>
 
       <div className="relative z-10 py-10 sm:py-12">
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="relative isolate overflow-hidden hover:shadow-xl bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff] border border-[#83d9e8]  px-6 py-24 sm:px-10 xl:py-20  shadow-sm">
-            <div className="absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] border-[#83d9e8] opacity-30 animate-pulse"></div>
-            <div className="absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px] border-[#5fc7dc] opacity-20"></div>
-            <div className="absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px] border-[#83d9e8] opacity-10"></div>
-            <h2 className="mx-auto max-w-3xl text-gray-800 text-center text-4xl font-semibold tracking-tight sm:text-5xl">
+          <div
+            className={`relative isolate overflow-hidden hover:shadow-xl  px-6 py-24 sm:px-10 xl:py-20  shadow-sm border border-[#83d9e8] ${
+              darkMode
+                ? "bg-gradient-to-tr from-[#b0d8e5] via-[#3c8d99] to-[#f8fbff]"
+                : "bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff]"
+            }`}
+          >
+            <div
+              className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] animate-pulse ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-50"
+                  : "border-[#83d9e8] opacity-80"
+              }`}
+            ></div>
+            <div
+              className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px]  ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-50"
+                  : "border-[#5fc7dc] opacity-30"
+              }`}
+            ></div>
+            <div
+              className={`absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px] ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-50"
+                  : "border-[#83d9e8] opacity-30"
+              }`}
+            ></div>
+            <h2
+              className={`mx-auto max-w-3xl  text-center text-4xl font-semibold tracking-tight sm:text-5xl ${
+                darkMode ? "text-gray-900" : "text-gray-800"
+              }`}
+            >
               Let&#39;s Connect
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-gray-800">
+            <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-gray-900">
               Have a project in mind or just want to say hi? I&#39;m always open
               to discussing new ideas, collaborations, or opportunities.
             </p>
@@ -53,7 +103,10 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/priyanka-sahu27"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-700 transition"
+                className={` hover:text-blue-700 transition ${
+                  darkMode ? "text-gray-900" : "text-gray-600"
+                }`}
+                // className="text-gray-600 hover:text-blue-700 transition"
               >
                 <FaLinkedin size={28} />
               </a>
@@ -61,7 +114,11 @@ export default function Contact() {
                 href="https://github.com/Priyankaps77"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-black transition"
+                className={`  transition ${
+                  darkMode
+                    ? "text-gray-900 hover:text-gray-600"
+                    : "text-gray-600 hover:text-black"
+                }`}
               >
                 <FaGithub size={28} />
               </a>
@@ -69,7 +126,9 @@ export default function Contact() {
                 href="https://www.instagram.com/_the_g00d_half"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-pink-500 transition"
+                className={` hover:text-pink-500 transition ${
+                  darkMode ? "text-gray-900" : "text-gray-600"
+                }`}
               >
                 <FaInstagram size={28} />
               </a>
@@ -77,7 +136,9 @@ export default function Contact() {
                 href="https://x.com/Priyank23684334"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-500 transition"
+                className={`text-gray-600 hover:text-blue-500 transition ${
+                  darkMode ? "text-gray-900" : "text-gray-600"
+                }`}
               >
                 <FaTwitter size={28} />
               </a>
@@ -85,7 +146,9 @@ export default function Contact() {
                 href="https://www.facebook.com/share/167z9GypDV/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 transition"
+                className={` hover:text-blue-600 transition ${
+                  darkMode ? "text-gray-900" : "text-gray-600"
+                }`}
               >
                 <FaFacebook size={28} />
               </a>

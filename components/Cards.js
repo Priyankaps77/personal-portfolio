@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function DestinationCards() {
+export default function DestinationCards({ darkMode }) {
   const [transform, setTransform] = useState("scale(1)");
 
   const handleMouseMove = (e) => {
@@ -19,7 +19,7 @@ export default function DestinationCards() {
 
   return (
     <section
-      className="relative w-full h-[90vh] "
+      className={`relative w-full h-[90vh] overflow-hidden`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -27,18 +27,36 @@ export default function DestinationCards() {
       <img
         src="/background.jpg"
         alt="Background scenery"
-        className="absolute inset-0 w-full h-full object-cover opacity-100  dark:opacity-40"
+        className="absolute inset-0 w-full h-full object-cover z-0"
         style={{ transform }}
       />
 
+      {/* Dark mode overlay */}
+      {darkMode && (
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#b0d8e5] via-[#3c8d99] to-[#f8fbff] opacity-50 z-10"></div>
+      )}
+
+      {/* Gradient overlay (optional for both modes) */}
+      <div
+        className={`absolute inset-0 z-20 pointer-events-none ${
+          darkMode
+            ? "bg-gradient-to-tr from-[#b0d8e5] via-[#3c8d99] to-[#f8fbff] opacity-50"
+            : ""
+        }`}
+      ></div>
+
       {/* Bottom-left content */}
-      <div className="absolute bottom-10 left-6 md:left-10 text-white z-10">
+      <div
+        className={`absolute bottom-10 left-6 md:left-10  z-30 ${
+          darkMode ? "text-gray-900" : "text-gray-800"
+        }`}
+      >
         <h1 className="text-3xl md:text-5xl font-bold drop-shadow-md">
           Discover My Journey
         </h1>
         <p className="mt-2 text-lg md:text-xl drop-shadow-sm">
           Unforgettable experiences begin here.
-        </p>
+        </p>  
       </div>
     </section>
   );

@@ -138,11 +138,11 @@ const posts = [
   },
 ];
 
-export const Gallery = () => {
+export const Gallery = ({ darkMode }) => {
   const [startIndex, setStartIndex] = useState(0);
 
   const visibleCount = 3;
-  const itemWidth = 400;
+  const itemWidth = 370;
   const gap = 20;
 
   const maxIndex = posts.length - visibleCount;
@@ -162,30 +162,57 @@ export const Gallery = () => {
   return (
     <section
       id="projects"
-      className=" bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff]"
+      className={`${
+        darkMode
+          ? "bg-gradient-to-tr from-[#b0d8e5] via-[#3c8d99] to-[#f8fbff]"
+          : "bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff]"
+      }`}
     >
-      <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full border-[6px] border-[#83d9e8] opacity-40"></div>
-      <div className="absolute top-40 left-10 w-[300px] h-[300px] rounded-full border-[4px] border-[#5fc7dc] opacity-30"></div>
-      <div className="absolute -bottom-40 -left-20 w-[400px] h-[400px] rounded-full border-[5px] border-[#83d9e8] opacity-20"></div>
       <div className=" py-24 sm:py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff]">
-          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full border-[6px] border-[#83d9e8] opacity-40"></div>
-          <div className="absolute top-40 right-10 w-[300px] h-[300px] rounded-full border-[4px] border-[#5fc7dc] opacity-30"></div>
-          <div className="absolute -bottom-40 -right-20 w-[400px] h-[400px] rounded-full border-[5px] border-[#83d9e8] opacity-20"></div>
+        <div
+          className={`mx-auto max-w-7xl px-6 lg:px-8  ${
+            darkMode
+              ? "bg-gradient-to-tr from-[#b0d8e5] via-[#3c8d99] to-[#f8fbff]"
+              : "bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff]"
+          }`}
+        >
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
               Projects
             </h2>
-            <p className="mt-2 text-lg/8 text-gray-600">
+            <p
+              className={`mt-2 text-lg/8 ${
+                darkMode ? "text-gray-900" : "text-gray-600"
+              }`}
+            >
               Crafting intuitive, responsive, and impactful user experiences
               with modern front-end magic.
             </p>
           </div>
 
           <div className="relative mt-16">
-            <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full border-[6px] border-[#5fc7dc] opacity-40"></div>
-            <div className="absolute top-40 left-10 w-[300px] h-[300px] rounded-full border-[4px] border-[#5fc7dc] opacity-30"></div>
-            <div className="absolute -bottom-40 -left-20 w-[400px] h-[400px] rounded-full border-[5px] border-[#83d9e8] opacity-20"></div>
+            <div
+              className={`absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px] ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-30"
+                  : "border-[#83d9e8] opacity-30"
+              }`}
+            ></div>
+            <div
+              className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px]  ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-30"
+                  : "border-[#5fc7dc] opacity-30"
+              }`}
+            ></div>
+            <div
+              className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] animate-pulse ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-30"
+                  : "border-[#83d9e8] opacity-80"
+              }`}
+            ></div>
+
             <div className="relative mt-10 overflow-hidden">
               <AnimatePresence>
                 <div
@@ -241,7 +268,11 @@ export const Gallery = () => {
                                 {post.title}
                               </a>
                             </h3>
-                            <p className="mt-5 text-xs/6 text-gray-600 px-3">
+                            <p
+                              className={`mt-5 text-xs/6 px-3 ${
+                                darkMode ? "text-gray-900" : "text-gray-600"
+                              }`}
+                            >
                               {post.description
                                 .split(".")
                                 .map((sentence, index) => {
