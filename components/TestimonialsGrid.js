@@ -63,7 +63,7 @@ export const TestimonialsGrid = ({ darkMode }) => {
         </p>
       </div>
 
-      <div className="relative z-10 mx-[136px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
+      <div className="relative z-10 lg:mx-[136px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
         {testimonials.map((item, index) => {
           const IconComponent = icons[index];
           return (

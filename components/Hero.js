@@ -1,7 +1,7 @@
 export default function Hero({ darkMode }) {
   return (
     <section
-      className={`py-12 overflow-hidden ${
+      className={`lg:py-12 overflow-hidden ${
         darkMode
           ? "bg-gradient-to-tr from-[#b0d8e5] via-[#3c8d99] to-[#f8fbff]"
           : "bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff]"
@@ -22,7 +22,7 @@ export default function Hero({ darkMode }) {
                   alt=""
                   // src="/darkblue-woman.png"
                   src={darkMode ? "/blue-woman.png" : "/darkblue-woman.png"}
-                  className="absolute inset-0 size-full object-cover bg-gray-800 object-cover border border-gray-300"
+                  className="absolute inset-0 md:size-px lg:size-full object-cover bg-gray-800 object-cover border border-gray-300"
                 />
               </div>
             </div>
@@ -41,7 +41,7 @@ export default function Hero({ darkMode }) {
                   <use x={86} href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" />
                 </svg>
                 <blockquote
-                  className={`text-xl/8 font-semibold  sm:text-2xl/9 ${
+                  className={`text-lg/8 font-semibold md:text-2xl lg:pt-0 pt-80 lg:text-2xl/9 ${
                     darkMode ? "text-gray-900" : "text-gray-800"
                   }`}
                 >

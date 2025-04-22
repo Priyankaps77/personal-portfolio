@@ -19,7 +19,7 @@ export const SplitImageText2 = ({ darkMode }) => {
             : "bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff]"
         }`}
       >
-        <div className="text-center max-w-md  p-20 rounded-md shadow-sm">
+        <div className="text-center max-w-md lg:p-20 p-5 rounded-md shadow-sm">
           <h2
             className={`text-3xl md:text-4xl font-bold  mb-4 ${
               darkMode ? "text-gray-900" : "text-gray-800"

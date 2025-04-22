@@ -40,7 +40,7 @@ export default function Contact({ darkMode }) {
       ></div>
 
       <div className="relative z-10 py-10 sm:py-12">
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="mx-auto w-80 md:max-w-4xl lg:max-w-7xl sm:px-6 lg:px-8">
           <div
             className={`relative isolate overflow-hidden hover:shadow-xl  px-6 py-24 sm:px-10 xl:py-20  shadow-sm border border-[#83d9e8] ${
               darkMode

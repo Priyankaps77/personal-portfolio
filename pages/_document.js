@@ -1,7 +1,7 @@
 // ./pages/_document.js
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
-class MyDocument extends Document {
+const CustomDoc = class extends Document {
   render() {
     return (
       <Html lang="en">
@@ -11,8 +11,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
-}
+};
 
-export default MyDocument
+export default CustomDoc;

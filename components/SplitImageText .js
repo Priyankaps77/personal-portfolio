@@ -28,13 +28,13 @@ export const SplitImageText = ({ darkMode }) => {
       </div>
 
       <div
-        className={`w-full md:w-1/2 h-1/2 md:h-full flex items-center relative justify-center px-6 ${
+        className={`w-full md:w-1/2 h-1/2 md:h-full flex items-center relative justify-center lg:my-0 my-10 px-6 ${
           darkMode
             ? "bg-gradient-to-tr from-[#b0d8e5] via-[#3c8d99] to-[#f8fbff]"
             : "bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff]"
         }`}
       >
-        <div className="text-center max-w-md  p-20">
+        <div className="text-center w-full lg:max-w-md   lg:p-20">
           <h2
             className={`text-3xl md:text-4xl font-bold  mb-4 ${
               darkMode ? "text-gray-900" : "text-gray-800"

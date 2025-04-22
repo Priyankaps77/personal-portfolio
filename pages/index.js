@@ -41,33 +41,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* <nav className="hidden md:flex space-x-6 ">
-              <a
-                href="#home"
-                className="hover:text-gray-600 hover:text-xl text-sm font-semibold  uppercase tracking-wider"
-              >
-                Home
-              </a>
-              <a
-                href="#about"
-                className="hover:text-gray-600 hover:text-xl text-sm font-semibold  uppercase tracking-wider"
-              >
-                About
-              </a>
-              <a
-                href="#projects"
-                className="hover:text-gray-600 hover:text-xl text-sm font-semibold  uppercase tracking-wider"
-              >
-                Projects
-              </a>
-              <a
-                href="#contact"
-                className="hover:text-gray-600 hover:text-xl text-sm font-semibold  uppercase tracking-wider"
-              >
-                Contact
-              </a>
-            </nav> */}
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex lg:space-x-8">
               {[
                 { href: "/", label: "Home" },
                 { href: "#about", label: "About" },
@@ -131,3 +105,32 @@ const Home = () => {
 };
 
 export default Home;
+
+{
+  /* <nav className="hidden md:flex space-x-6 ">
+              <a
+                href="#home"
+                className="hover:text-gray-600 hover:text-xl text-sm font-semibold  uppercase tracking-wider"
+              >
+                Home
+              </a>
+              <a
+                href="#about"
+                className="hover:text-gray-600 hover:text-xl text-sm font-semibold  uppercase tracking-wider"
+              >
+                About
+              </a>
+              <a
+                href="#projects"
+                className="hover:text-gray-600 hover:text-xl text-sm font-semibold  uppercase tracking-wider"
+              >
+                Projects
+              </a>
+              <a
+                href="#contact"
+                className="hover:text-gray-600 hover:text-xl text-sm font-semibold  uppercase tracking-wider"
+              >
+                Contact
+              </a>
+            </nav> */
+}
