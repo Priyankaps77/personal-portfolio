@@ -5,6 +5,7 @@ import {
   FaTwitter,
   FaFacebook,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function Contact({ darkMode }) {
   return (
@@ -17,27 +18,42 @@ export default function Contact({ darkMode }) {
       }`}
     >
       {/* Background concentric circles */}
-      <div
-        className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px]  animate-pulse ${
+      <motion.div
+        whileHover={{ rotate: 360 }}
+        transition={{ duration: 2, ease: "linear" }}
+        className={`absolute bottom-[-100px] right-[100px] w-[500px] h-[500px] rounded-full border-[6px] flex items-center justify-center ${
           darkMode
-            ? "border-[#b2e7f0] opacity-100"
-            : "border-[#83d9e8] opacity-50"
+            ? "border-[#b2e7f0] opacity-30"
+            : "border-[#83d9e8] opacity-30"
         }`}
-      ></div>
-      <div
-        className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] hover:shadow-xl rounded-full border-[5px]  ${
+      >
+        <div className="w-10 h-10 bg-white rounded-full translate-x-[200px]" />
+      </motion.div>
+
+      <motion.div
+        whileHover={{ rotate: 360 }}
+        transition={{ duration: 2, ease: "linear" }}
+        className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px] ${
           darkMode
-            ? "border-[#b2e7f0] opacity-100"
-            : "border-[#5fc7dc] opacity-50"
+            ? "border-[#b2e7f0] opacity-30"
+            : "border-[#5fc7dc] opacity-30"
         }`}
-      ></div>
-      <div
-        className={`absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px]  ${
+        style={{
+          background:
+            "conic-gradient(from 0deg, #5fc7dc 0%, transparent 25%, #5fc7dc 50%, transparent 75%, #5fc7dc 100%)",
+        }}
+      />
+      <motion.div
+        whileHover={{ rotate: 360 }}
+        transition={{ duration: 2, ease: "linear" }}
+        className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] flex items-center justify-start ${
           darkMode
-            ? "border-[#b2e7f0] opacity-100"
-            : "border-[#83d9e8] opacity-50"
+            ? "border-[#b2e7f0] opacity-30"
+            : "border-[#83d9e8] opacity-80"
         }`}
-      ></div>
+      >
+        <div className="w-10 h-10 bg-[#fff] rounded-full shadow-md" />
+      </motion.div>
 
       <div className="relative z-10 py-10 sm:py-12">
         <div className="lg:mx-auto md:mx-auto sm:mx-5 sm:max-w-xl  md:max-w-4xl lg:max-w-7xl sm:px-6 lg:px-8">
@@ -48,27 +64,43 @@ export default function Contact({ darkMode }) {
                 : "bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff]"
             }`}
           >
-            <div
-              className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] animate-pulse ${
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 2, ease: "linear" }}
+              className={`absolute bottom-[-100px] right-[100px] w-[500px] h-[500px] rounded-full border-[6px] flex items-center justify-center ${
                 darkMode
-                  ? "border-[#b2e7f0] opacity-50"
-                  : "border-[#83d9e8] opacity-80"
-              }`}
-            ></div>
-            <div
-              className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px]  ${
-                darkMode
-                  ? "border-[#b2e7f0] opacity-50"
-                  : "border-[#5fc7dc] opacity-30"
-              }`}
-            ></div>
-            <div
-              className={`absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px] ${
-                darkMode
-                  ? "border-[#b2e7f0] opacity-50"
+                  ? "border-[#b2e7f0] opacity-30"
                   : "border-[#83d9e8] opacity-30"
               }`}
-            ></div>
+            >
+              <div className="w-10 h-10 bg-white rounded-full translate-x-[200px]" />
+            </motion.div>
+
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 2, ease: "linear" }}
+              className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px] ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-30"
+                  : "border-[#5fc7dc] opacity-30"
+              }`}
+              style={{
+                background:
+                  "conic-gradient(from 0deg, #5fc7dc 0%, transparent 25%, #5fc7dc 50%, transparent 75%, #5fc7dc 100%)",
+              }}
+            />
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 2, ease: "linear" }}
+              className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] flex items-center justify-start ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-30"
+                  : "border-[#83d9e8] opacity-80"
+              }`}
+            >
+              <div className="w-10 h-10 bg-[#fff] rounded-full shadow-md" />
+            </motion.div>
+
             <h2
               className={`mx-auto max-w-3xl  text-center text-4xl font-semibold tracking-tight sm:text-5xl ${
                 darkMode ? "text-gray-900" : "text-gray-800"
@@ -158,4 +190,51 @@ export default function Contact({ darkMode }) {
       </div>
     </section>
   );
+}
+
+{
+  /* <div
+              className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] animate-pulse ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-50"
+                  : "border-[#83d9e8] opacity-80"
+              }`}
+            ></div>
+            <div
+              className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px]  ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-50"
+                  : "border-[#5fc7dc] opacity-30"
+              }`}
+            ></div>
+            <div
+              className={`absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px] ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-50"
+                  : "border-[#83d9e8] opacity-30"
+              }`}
+            ></div> */
+}
+{
+  /* <div
+        className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px]  animate-pulse ${
+          darkMode
+            ? "border-[#b2e7f0] opacity-100"
+            : "border-[#83d9e8] opacity-50"
+        }`}
+      ></div>
+      <div
+        className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] hover:shadow-xl rounded-full border-[5px]  ${
+          darkMode
+            ? "border-[#b2e7f0] opacity-100"
+            : "border-[#5fc7dc] opacity-50"
+        }`}
+      ></div>
+      <div
+        className={`absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px]  ${
+          darkMode
+            ? "border-[#b2e7f0] opacity-100"
+            : "border-[#83d9e8] opacity-50"
+        }`}
+      ></div> */
 }

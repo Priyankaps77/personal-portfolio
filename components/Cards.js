@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { motion } from "motion/react";
 export default function DestinationCards({ darkMode }) {
   const [transform, setTransform] = useState("scale(1)");
 
@@ -44,6 +44,37 @@ export default function DestinationCards({ darkMode }) {
             : ""
         }`}
       ></div>
+      {darkMode && (
+        <motion.div
+          whileHover={{ rotate: 360 }}
+          transition={{ duration: 2, ease: "linear" }}
+          className="absolute bottom-[-100px] right-[100px] w-[500px] h-[500px] rounded-full border-[6px] flex items-center justify-center border-[#d6f2f8]"
+        >
+          <div className="w-10 h-10 bg-white rounded-full translate-x-[200px]" />
+        </motion.div>
+      )}
+
+      {darkMode && (
+        <motion.div
+          whileHover={{ rotate: 360 }}
+          transition={{ duration: 2, ease: "linear" }}
+          className="absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px] border-[#d6f2f8]"
+          style={{
+            background:
+              "conic-gradient(from 0deg, #5fc7dc 0%, transparent 25%, #5fc7dc 50%, transparent 75%, #5fc7dc 100%)",
+          }}
+        />
+      )}
+
+      {darkMode && (
+        <motion.div
+          whileHover={{ rotate: 360 }}
+          transition={{ duration: 2, ease: "linear" }}
+          className="absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] flex items-center justify-start border-[#eafcff]"
+        >
+          <div className="w-10 h-10 bg-white rounded-full shadow-md" />
+        </motion.div>
+      )}
 
       {/* Bottom-left content */}
       <div
@@ -56,7 +87,7 @@ export default function DestinationCards({ darkMode }) {
         </h1>
         <p className="mt-2 text-lg md:text-xl drop-shadow-sm">
           Unforgettable experiences begin here.
-        </p>  
+        </p>
       </div>
     </section>
   );

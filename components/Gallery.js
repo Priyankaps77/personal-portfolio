@@ -15,7 +15,7 @@ const posts = [
     description:
       "Built a responsive and modern UI for Dubai Driving Center using Nextjs, Reactjs, and Tailwind CSS. Integrated real-time driving service data for up-to-date user information. Designed modular, reusable components for scalable development. Ensured smooth user navigation with clear, intuitive layouts. Used Nodejs for backend APIs, enabling seamless data flow and server-side handling.",
     imageUrl: "/ddc.png",
-    date: "Mar 16, 2020",
+    date: "Mar, 2023",
     datetime: "2020-03-16",
     category: { title: "Marketing", href: "#" },
     // author: {
@@ -33,7 +33,7 @@ const posts = [
     description:
       "Developed a user-friendly interface to streamline internal operations for HUL’s Samadhan platform. Built reusable components for consistency and maintainability across the app. Integrated backend services to ensure real-time data updates and actions. Designed with a clean, responsive UI using Tailwind CSS and Reactjs.",
     imageUrl: "/Impact logo.png",
-    date: "Mar 16, 2020",
+    date: "currently working",
     datetime: "2020-03-16",
     category: { title: "Marketing", href: "#" },
     // author: {
@@ -51,7 +51,7 @@ const posts = [
     description:
       "Created a robust dashboard to monitor and manage reconciliation workflows for internal teams. Emphasized data accuracy and transparency through detailed visual reports. Implemented seamless interactions using component-driven development in Reactjs. Enabled efficient backend communication with API integrations via Nodejs.",
     imageUrl: "/reconciliation.png",
-    date: "Mar 16, 2020",
+    date: "currently working",
     datetime: "2020-03-16",
     category: { title: "Marketing", href: "#" },
     // author: {
@@ -70,7 +70,7 @@ const posts = [
     description:
       "Developed a clean, informative website for Shivashakthi to showcase products and brand presence. Focused on simplicity and clarity to reflect the brand’s identity effectively. Created dynamic sections for content updates without code changes. Ensured fast load times and mobile responsiveness using Tailwind CSS.",
     imageUrl: "/shivashakti-logo.png",
-    date: "Mar 16, 2020",
+    date: "Jun , 2024 - 2025",
     datetime: "2020-03-16",
     category: { title: "Marketing", href: "#" },
     // author: {
@@ -89,7 +89,7 @@ const posts = [
     description:
       "Contributed as an Assistant Developer in building the user interface and implementing key components for the project.Played a major role in making the site dynamic by integrating various interactive elements.Focused on enhancing the user experience by ensuring a responsive and visually appealing design.Collaborated in optimizing the functionality and structure of the website for smooth performance across different devices.",
     imageUrl: "/sites60.png",
-    date: "Mar 16, 2020",
+    date: "Feb, 2023",
     datetime: "2020-03-16",
     category: { title: "Marketing", href: "#" },
     // author: {
@@ -107,7 +107,7 @@ const posts = [
     description:
       "Assisted in developing the user interface by adding key components, ensuring a seamless and visually appealing design.Contributed to making the site dynamic by writing and integrating APIs, enabling smooth interaction and data flow.Enhanced the project’s functionality by collaborating on backend logic and integrating dynamic features into the UI.Played an essential role in ensuring the platform’s performance by testing, debugging, and optimizing the overall user experience.",
     imageUrl: "/designWalls.png",
-    date: "Mar 16, 2020",
+    date: "Sep, 2023",
     datetime: "2020-03-16",
     category: { title: "Marketing", href: "#" },
     // author: {
@@ -125,7 +125,7 @@ const posts = [
     description:
       "Designed and developed key UI components, ensuring an intuitive and responsive user interface for the project.Wrote and integrated APIs to make the platform dynamic and responsive, enhancing user interaction.Created a Progressive Web App (PWA) to improve accessibility and performance across multiple devices.Played a significant role in optimizing the overall functionality and user experience, ensuring smooth performance and seamless offline capabilities.",
     imageUrl: "/home360.png",
-    date: "Mar 16, 2020",
+    date: "Dec, 2024",
     datetime: "2020-03-16",
     category: { title: "Marketing", href: "#" },
     // author: {
@@ -191,32 +191,47 @@ export const Gallery = ({ darkMode }) => {
           </div>
 
           <div className="relative mt-16">
-            <div
-              className={`absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px] ${
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 2, ease: "linear" }}
+              className={`absolute bottom-[-100px] right-[100px] w-[500px] h-[500px] rounded-full border-[6px] flex items-center justify-center ${
                 darkMode
                   ? "border-[#b2e7f0] opacity-30"
                   : "border-[#83d9e8] opacity-30"
               }`}
-            ></div>
-            <div
-              className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px]  ${
+            >
+              <div className="w-10 h-10 bg-white rounded-full translate-x-[200px]" />
+            </motion.div>
+
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 2, ease: "linear" }}
+              className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px] ${
                 darkMode
                   ? "border-[#b2e7f0] opacity-30"
                   : "border-[#5fc7dc] opacity-30"
               }`}
-            ></div>
-            <div
-              className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] animate-pulse ${
+              style={{
+                background:
+                  "conic-gradient(from 0deg, #5fc7dc 0%, transparent 25%, #5fc7dc 50%, transparent 75%, #5fc7dc 100%)",
+              }}
+            />
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 2, ease: "linear" }}
+              className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] flex items-center justify-start ${
                 darkMode
                   ? "border-[#b2e7f0] opacity-30"
                   : "border-[#83d9e8] opacity-80"
               }`}
-            ></div>
+            >
+              <div className="w-10 h-10 bg-[#fff] rounded-full shadow-md" />
+            </motion.div>
 
             <div className="relative mt-10 overflow-hidden">
               <AnimatePresence>
                 <div
-                  className="flex transition-transform duration-500 ease-in-out"
+                  className="flex transition-transform duration-500 ease-in-out "
                   style={{
                     transform: `translateX(-${startIndex * itemWidth}px)`,
                     width: `${posts.length * itemWidth}px`,
@@ -227,7 +242,7 @@ export const Gallery = ({ darkMode }) => {
                     <motion.div
                       key={post.id}
                       style={{ width: `${itemWidth}px` }}
-                      className="flex flex-col items-start justify-between hover:shadow-2xl"
+                      className="flex flex-col items-start justify-between hover:shadow-2xl transform hover:scale-105 "
                       initial={{ opacity: 0, x: 30 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ x: -300, opacity: 0 }}
@@ -238,7 +253,7 @@ export const Gallery = ({ darkMode }) => {
                         style={{ width: `${itemWidth}px` }}
                         className="flex flex-col items-start justify-between "
                       >
-                        <div className="relative w-full">
+                        <div className="relative border-2 border-[#83d9e8] w-full">
                           <img
                             alt=""
                             src={post.imageUrl}
@@ -330,3 +345,27 @@ export const Gallery = ({ darkMode }) => {
     </section>
   );
 };
+
+{
+  /* <div
+              className={`absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px] ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-30"
+                  : "border-[#83d9e8] opacity-30"
+              }`}
+            ></div>
+            <div
+              className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px]  ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-30"
+                  : "border-[#5fc7dc] opacity-30"
+              }`}
+            ></div>
+            <div
+              className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] animate-pulse ${
+                darkMode
+                  ? "border-[#b2e7f0] opacity-30"
+                  : "border-[#83d9e8] opacity-80"
+              }`}
+            ></div> */
+}

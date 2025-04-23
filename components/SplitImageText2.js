@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export const SplitImageText2 = ({ darkMode }) => {
   return (
@@ -38,28 +39,42 @@ export const SplitImageText2 = ({ darkMode }) => {
             or working out in the park.
           </p>
         </div>
-
-        <div
-          className={`absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px] ${
+        <motion.div
+          whileHover={{ rotate: 360 }}
+          transition={{ duration: 2, ease: "linear" }}
+          className={`absolute bottom-[-100px] right-[100px] w-[500px] h-[500px] rounded-full border-[6px] flex items-center justify-center ${
             darkMode
               ? "border-[#b2e7f0] opacity-30"
               : "border-[#83d9e8] opacity-30"
           }`}
-        ></div>
-        <div
-          className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px]  ${
+        >
+          <div className="w-10 h-10 bg-white rounded-full translate-x-[200px]" />
+        </motion.div>
+
+        <motion.div
+          whileHover={{ rotate: 360 }}
+          transition={{ duration: 2, ease: "linear" }}
+          className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px] ${
             darkMode
               ? "border-[#b2e7f0] opacity-30"
               : "border-[#5fc7dc] opacity-30"
           }`}
-        ></div>
-        <div
-          className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] animate-pulse ${
+          style={{
+            background:
+              "conic-gradient(from 0deg, #5fc7dc 0%, transparent 25%, #5fc7dc 50%, transparent 75%, #5fc7dc 100%)",
+          }}
+        />
+        <motion.div
+          whileHover={{ rotate: 360 }}
+          transition={{ duration: 2, ease: "linear" }}
+          className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] flex items-center justify-start ${
             darkMode
               ? "border-[#b2e7f0] opacity-30"
               : "border-[#83d9e8] opacity-80"
           }`}
-        ></div>
+        >
+          <div className="w-10 h-10 bg-[#fff] rounded-full shadow-md" />
+        </motion.div>
       </div>
 
       {/* Right Section with Image */}
@@ -82,3 +97,27 @@ export const SplitImageText2 = ({ darkMode }) => {
     </section>
   );
 };
+
+{
+  /* <div
+          className={`absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full border-[6px] ${
+            darkMode
+              ? "border-[#b2e7f0] opacity-30"
+              : "border-[#83d9e8] opacity-30"
+          }`}
+        ></div>
+        <div
+          className={`absolute top-[100px] left-[50px] w-[400px] h-[400px] rounded-full border-[5px]  ${
+            darkMode
+              ? "border-[#b2e7f0] opacity-30"
+              : "border-[#5fc7dc] opacity-30"
+          }`}
+        ></div>
+        <div
+          className={`absolute top-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full border-[6px] animate-pulse ${
+            darkMode
+              ? "border-[#b2e7f0] opacity-30"
+              : "border-[#83d9e8] opacity-80"
+          }`}
+        ></div> */
+}
