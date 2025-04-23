@@ -63,19 +63,19 @@ export const TestimonialsGrid = ({ darkMode }) => {
         </p>
       </div>
 
-      <div className="relative z-10 lg:mx-[136px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
+      <div className="relative z-10 lg:mx-[136px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in">
         {testimonials.map((item, index) => {
           const IconComponent = icons[index];
           return (
             <div
               key={item.id}
-              className={`border-2 border-[#83d9e8] w-full h-72 p-6 text-left hover:border-[#83d9e8] hover:shadow-md transition  backdrop-blur-sm ${
+              className={`border-2 border-[#83d9e8] w-full h-72 p-6 text-left hover:border-[#83d9e8] backdrop-blur-sm transition-all duration-300 ease-out hover:glow-4xl transform hover:scale-105 hover:shadow-xl ${
                 darkMode
                   ? "bg-gradient-to-tr from-[#b0d8e5] via-[#3c8d99] to-[#f8fbff] text-gray-900"
                   : "bg-gradient-to-tr from-[#e0f0ff] via-[#83d9e8] to-[#f8fbff] text-gray-800"
               }`}
             >
-              <div className="flex justify-start  text-3xl my-5">
+              <div className="flex justify-start  text-3xl my-5 transition-transform transform hover:scale-110 hover:rotate-6">
                 <IconComponent />
               </div>
               <h3 className="text-xl font-semibold  mt-10 mb-4">

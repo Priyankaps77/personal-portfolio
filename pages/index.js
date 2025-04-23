@@ -6,7 +6,14 @@ import { SplitImageText } from "../components/SplitImageText ";
 import { SplitImageText2 } from "../components/SplitImageText2";
 import { TestimonialsGrid } from "../components/TestimonialsGrid";
 import { Gallery } from "../components/Gallery";
-import { FaSearch, FaUser, FaSuitcase, FaMoon, FaSun } from "react-icons/fa";
+import {
+  FaSearch,
+  FaUser,
+  // FaSuitcase,
+  FaMoon,
+  FaSun,
+  FaDownload,
+} from "react-icons/fa";
 import { useState } from "react";
 
 const Home = () => {
@@ -68,10 +75,7 @@ const Home = () => {
                   darkMode ? "text-black bg-[#83d9e8]" : "text-white bg-black"
                 }`}
               >
-                <button
-                  // className={`
-                  onClick={toggleTheme}
-                >
+                <button onClick={toggleTheme}>
                   {darkMode ? (
                     <FaMoon className="w-6 h-6" />
                   ) : (
@@ -81,12 +85,21 @@ const Home = () => {
               </div>
               <FaSearch className="cursor-pointer hover:text-gray-600" />
               <FaUser className="cursor-pointer hover:text-gray-600" />
-              <div className="relative">
+              <div className="relative flex gap-4 group">
+                <a href="/resume.pdf" download>
+                  <FaDownload className="cursor-pointer hover:text-gray-600" />
+                </a>
+                <span className="absolute top-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                  Resume
+                </span>
+              </div>
+
+              {/* <div className="relative">
                 <FaSuitcase className="cursor-pointer hover:text-gray-600 " />
                 <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
                   0
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
         </header>
